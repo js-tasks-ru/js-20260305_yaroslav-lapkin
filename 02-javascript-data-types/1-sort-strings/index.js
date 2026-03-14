@@ -5,7 +5,7 @@
  * @returns {string[]}
  */
 export function sortStrings(arr, param = "asc") {
-  const collator = new Intl.Collator("ru", { caseFirst: "upper" });
+  const collator = new Intl.Collator(["ru", "en"], { caseFirst: "upper" });
   const type = param === "desc" ? -1 : 1;
   return [...arr].sort((a, b) => collator.compare(a, b) * type);
 }
