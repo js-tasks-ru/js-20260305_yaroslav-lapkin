@@ -19,7 +19,7 @@ export default class ColumnChart {
   private readonly label: string;
   private readonly link?: string;
   private readonly formatHeading: (value: number) => string;
-  private readonly chartHeight = 50;
+  public readonly chartHeight = 50;
   public element: HTMLElement | null = null;
   private subElements: SubElements = {};
 
