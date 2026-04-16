@@ -136,7 +136,9 @@ export default class DoubleSlider {
   private handlePointerDown(side: "left" | "right", thumb: HTMLElement) {
     return (event: PointerEvent): void => {
       event.preventDefault();
-      thumb.setPointerCapture(event.pointerId);
+      if (event.pointerId !== undefined) {
+        thumb.setPointerCapture(event.pointerId);
+      }
 
       this.startDrag(side);
     };
